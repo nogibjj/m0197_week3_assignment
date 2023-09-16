@@ -33,7 +33,8 @@ def descriptive_statistics(csv_file_path, selected_columns=None):
 #     csv_file_path = "datasets/cereal.csv"
 #     selected_columns = ["calories"]
 
-#     mean_str, median_str, std_str = descriptive_statistics(csv_file_path, selected_columns)
+#     mean_str, median_str, std_str = descriptive_statistics(csv_file_path,
+#  selected_columns)
 #     mean_str = str(mean_str)
 #     median_str = str(median_str)
 #     std_str = str(std_str)
