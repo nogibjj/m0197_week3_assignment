@@ -17,7 +17,7 @@ There primary test case passes as shown below:
 ### Visualisation: 
 1. `plot.py` This script reads a dataset using python polar, creates scatter plots to visualize the relationship between two variables/columns passed by the user, and optionally differentiates data points by color options using a categorical column. It helps users explore and understand the data through these visualizations. The visualisations are saved on `plots` folder
 #### Plots insights 
-![Carbs Rating](plots/carbohydrates and ratings of the Product.png) |![Carbs Rating by MRF](plots/carbohydrates and ratings of the Product by mfr.png)
+![Carbs Rating](plots/carbohydrates and ratings of the Product.png) | ![Carbs Rating by MRF](plots/carbohydrates and ratings of the Product by mfr.png)
 On average, high-carb items have lower ratings. However, regardless of the carb content, products from manufacturer `N` generally have higher ratings, greater than `50%`.
 
 This means that, while high-carb items are generally rated lower, manufacturer N's products are rated higher than the average high-carb item. This suggests that manufacturer N's products may have other qualities that make them more desirable to consumers, such as better taste, higher quality ingredients, or more convenient packaging.
