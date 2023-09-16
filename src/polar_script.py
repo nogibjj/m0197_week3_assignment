@@ -4,7 +4,6 @@ Polar function to display descriptive statistics for any file and specified or
 
 """
 
-
 import polars as pl
 
 
@@ -16,17 +15,41 @@ def descriptive_statistics(csv_file_path, selected_columns=None):
             numeric_columns = df.select(pl.col(pl.NUMERIC_DTYPES))
         else:
             numeric_columns = df[selected_columns]
+
+        # Initialize variables outside the loop
+        mean = None
+        median = None
+        std = None
+
         for col in numeric_columns.columns:
             series = numeric_columns[col]
 
-            mean = series.mean()
-            median = series.median()
-            std = series.std()
+            # Calculate mean, median, and std for each column
+            col_mean = series.mean()
+            col_median = series.median()
+            col_std = series.std()
 
+            # Accumulate results
+            if mean is None:
+                mean = col_mean
+                median = col_median
+                std = col_std
+            else:
+                mean += col_mean
+                median += col_median
+                std += col_std
+
+        # Calculate the final mean, median, and std
+        num_columns = len(numeric_columns.columns)
+        mean /= num_columns
+        median /= num_columns
+        std /= num_columns
 
     except FileNotFoundError:
         print("The file was not found.")
-    return mean,median,std
+        return None, None, None
+
+    return mean, median, std
 
 #
 # if __name__ == "__main__":
