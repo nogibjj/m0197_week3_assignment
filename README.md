@@ -1,4 +1,4 @@
-
+[![CI](https://github.com/nogibjj/m0197_week3_assignment/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/m0197_week3_assignment/actions/workflows/cicd.yml)
 ## Descriptive Statistics Using Polar
 
 ### Purpose
