@@ -23,16 +23,21 @@ On average, high-carb items have lower ratings. However, regardless of the carb 
 
 This means that, while high-carb items are generally rated lower, manufacturer N's products are rated higher than the average high-carb item. This suggests that manufacturer N's products may have other qualities that make them more desirable to consumers, such as better taste, higher quality ingredients, or more convenient packaging.
 
-### Infrastructure scripts:
-`.devcontainer`
-1. `devcontainer.json` Sets up a development environment. It also includes settings for Docker for VS Code or GitHub Codespace. 
-2. `Dockerfile` Dockerfile set up a development environment with Python 3.8
+## Usage
 
+To run the code, you can use the included Makefile:
 
-`Makefile` Streamlines development workflows and ensuring code quality and consistency.
+```bash
+# Install dependencies
+make install
 
+# Format the code using Black
+make format
 
-`setup.sh` Activates a virtual environment
+# Run linting with Ruff
+make lint
 
-
+# Run the main script
+make run
+```
 
