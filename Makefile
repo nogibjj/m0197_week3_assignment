@@ -15,8 +15,8 @@ lint:
 	ruff check *.py src/*.py
 
 run: 
-	python3 plot.py
-	
+	python3 plots.py
+
 container-lint:
 	docker run --rm -i hadolint/hadolint < Dockerfile
 
