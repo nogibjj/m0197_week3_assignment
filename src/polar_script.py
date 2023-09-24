@@ -6,8 +6,6 @@ Polar function to display descriptive statistics for any file and specified or
 
 import polars as pl
 
-import markdown
-
 
 def descriptive_statistics_1(csv_file_path, selected_columns=None):
     try:
