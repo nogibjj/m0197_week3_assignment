@@ -3,7 +3,7 @@ Testing the descriptive stats function
 
 """
 
-from src.polar_script import descriptive_statistics
+from src.polar_script import descriptive_statistics_1
 from io import StringIO
 import sys
 
@@ -13,7 +13,7 @@ def test_stats():
     csv_file_path = "datasets/cereal.csv"
     selected_columns = ["calories"]
 
-    mean, median, std = descriptive_statistics(csv_file_path,
+    mean, median, std = descriptive_statistics_1(csv_file_path,
                                                          selected_columns)
     # mean_str = str(mean)
     # median_str = str(median)

@@ -6,8 +6,10 @@ Polar function to display descriptive statistics for any file and specified or
 
 import polars as pl
 
+import markdown
 
-def descriptive_statistics(csv_file_path, selected_columns=None):
+
+def descriptive_statistics_1(csv_file_path, selected_columns=None):
     try:
         df = pl.read_csv(csv_file_path)
 
@@ -51,17 +53,33 @@ def descriptive_statistics(csv_file_path, selected_columns=None):
 
     return mean, median, std
 
-#
-# if __name__ == "__main__":
-#     csv_file_path = "datasets/cereal.csv"
-#     selected_columns = ["calories"]
+def get_descriptive_stats(csv_file_path):
+   
+   df = pl.read_csv(csv_file_path)
+   #numeric_columns = df.select(pl.col_is_numeric())
+   descriptive_stats = df.describe()
+   
+   return descriptive_stats
+
+def descriptive_stats_to_markdown_table(descriptive_stats):
+   
+   pandas_df = descriptive_stats.to_pandas()
+   markdown_table = pandas_df.to_markdown()
+   
+   return markdown_table
+
+
+if __name__ == "__main__":
+    csv_file_path = "datasets/cereal.csv"
+    selected_columns = ["calories"]
 
 #     mean_str, median_str, std_str = descriptive_statistics(csv_file_path,
 #  selected_columns)
 #     mean_str = str(mean_str)
 #     median_str = str(median_str)
 #     std_str = str(std_str)
+    descriptive_stats = get_descriptive_stats(csv_file_path)
+    markdown_table = descriptive_stats_to_markdown_table(descriptive_stats)
+    with open("descriptive_stats.md", "w") as f:
+        f.write(markdown_table)
 
-#     print(f"Mean: {mean_str}, Median: {median_str}, SD: {std_str}")
-
-# prints Mean: 105.54054054054055, Median: 110.0, SD: 18.442200853112762
